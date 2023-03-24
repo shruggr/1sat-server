@@ -89,23 +89,6 @@ func main() {
 		c.JSON(http.StatusOK, utxos)
 	})
 
-	// DEPRECATED: use `/api/inscriptions/origin/:origin` instead
-	r.GET("/api/inscriptions/:origin", func(c *gin.Context) {
-		origin, err := lib.NewOriginFromString(c.Param("origin"))
-		if err != nil {
-			handleError(c, err)
-			return
-		}
-		im, err := lib.LoadInscriptions(origin)
-		if err != nil {
-			handleError(c, err)
-			return
-		}
-
-		c.Header("cache-control", "max-age=604800,immutable")
-		c.JSON(http.StatusOK, im)
-	})
-
 	r.GET("/api/inscriptions/origin/:origin", func(c *gin.Context) {
 		origin, err := lib.NewOriginFromString(c.Param("origin"))
 		if err != nil {
