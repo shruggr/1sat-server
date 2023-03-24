@@ -1,5 +1,7 @@
 github.com/GorillaPool/go-junglebus v0.0.0-20220928133317-2e3624f72bf9 h1:Nmt8bGKf63Mrd4k2ZlyghByN9rK15gnJbu66JqCQszY=
 github.com/GorillaPool/go-junglebus v0.0.0-20220928133317-2e3624f72bf9/go.mod h1:yKY8iI/pSe7IcB0rKGczDN6hvJFQ6cKhidZX8/drdRI=
+github.com/GorillaPool/go-junglebus v0.2.0 h1:ZePeZgQLEyYrJbBaHB6GKeMt+QOyw4EOtXxAyZvpkAk=
+github.com/GorillaPool/go-junglebus v0.2.0/go.mod h1:LigiSImLy9G/Tg9RKbn+pNYnuPbs5oLUprQZkxEr/2k=
 github.com/bitcoinsv/bsvd v0.0.0-20190609155523-4c29707f7173 h1:2yTIV9u7H0BhRDGXH5xrAwAz7XibWJtX2dNezMeNsUo=
 github.com/bitcoinsv/bsvd v0.0.0-20190609155523-4c29707f7173/go.mod h1:BZ1UcC9+tmcDEcdVXgpt13hMczwJxWzpAn68wNs7zRA=
 github.com/bitcoinsv/bsvutil v0.0.0-20181216182056-1d77cf353ea9 h1:hFI8rT84FCA0FFy3cFrkW5Nz4FyNKlIdCvEvvTNySKg=
@@ -117,6 +119,12 @@ github.com/shruggr/1sat-indexer v0.0.0-20230322161723-0c6bf57e9eda h1:oTMn3DD58Z
 github.com/shruggr/1sat-indexer v0.0.0-20230322161723-0c6bf57e9eda/go.mod h1:NJPmq/76STKMYFkgTGd+dD+ZAvYsiv270D/jJUUkoPM=
 github.com/shruggr/1sat-indexer v0.0.0-20230324025827-828f9a16dc65 h1:Vymy9cRjjlsxAh0naD7w/c2XCxuQ3cOk3eU02bQXAGI=
 github.com/shruggr/1sat-indexer v0.0.0-20230324025827-828f9a16dc65/go.mod h1:NJPmq/76STKMYFkgTGd+dD+ZAvYsiv270D/jJUUkoPM=
+github.com/shruggr/1sat-indexer v0.0.0-20230324080020-48df4e99413d h1:NCyKG5Zy/f5C3ZQ6GPwhnn7IH1M3dWZbKd68+OGvtGo=
+github.com/shruggr/1sat-indexer v0.0.0-20230324080020-48df4e99413d/go.mod h1:NJPmq/76STKMYFkgTGd+dD+ZAvYsiv270D/jJUUkoPM=
+github.com/shruggr/1sat-indexer v0.0.0-20230324184723-970e48042c34 h1:L3DpzhCzV+3Q1mxPLqkOGUOewrsGvVt++dIPTbbcygU=
+github.com/shruggr/1sat-indexer v0.0.0-20230324184723-970e48042c34/go.mod h1:x4m8e17X4qROm+xsNLTflqFcrCPiC/uPndpA9BrSS7Y=
+github.com/shruggr/1sat-indexer v0.0.0-20230324185324-e7f3a6e136fd h1:6QMZkNLqKGHS5Ryb47cc/DGWqzc5J2qWZdBunuJJj6I=
+github.com/shruggr/1sat-indexer v0.0.0-20230324185324-e7f3a6e136fd/go.mod h1:x4m8e17X4qROm+xsNLTflqFcrCPiC/uPndpA9BrSS7Y=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/objx v0.4.0/go.mod h1:YvHI0jy2hoMjB+UWwv71VJQ9isScKT/TqJzVSSt89Yw=
 github.com/stretchr/objx v0.5.0/go.mod h1:Yh+to48EsGEfYuaHDzXPcE3xhTkx73EhmCGUpEOglKo=

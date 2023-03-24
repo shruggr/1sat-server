@@ -8,11 +8,11 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/libsv/go-bt v1.0.8
 	github.com/libsv/go-bt/v2 v2.1.1
-	github.com/shruggr/1sat-indexer v0.0.0-20230324025827-828f9a16dc65
+	github.com/shruggr/1sat-indexer v0.0.0-20230324185324-e7f3a6e136fd
 )
 
 require (
-	github.com/GorillaPool/go-junglebus v0.0.0-20220928133317-2e3624f72bf9 // indirect
+	github.com/GorillaPool/go-junglebus v0.2.0 // indirect
 	github.com/bitcoinsv/bsvd v0.0.0-20190609155523-4c29707f7173 // indirect
 	github.com/bitcoinsv/bsvutil v0.0.0-20181216182056-1d77cf353ea9 // indirect
 	github.com/bytedance/sonic v1.8.6 // indirect

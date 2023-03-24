@@ -123,9 +123,7 @@ func main() {
 	})
 
 	r.GET("/api/inscriptions/count", func(c *gin.Context) {
-		row := lib.Db.QueryRow(`SELECT MAX(id) FROM inscriptions`)
-		var count int
-		err := row.Scan(&count)
+		count, err := lib.GetInscriptionCount()
 		if err != nil {
 			handleError(c, err)
 			return
