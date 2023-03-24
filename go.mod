@@ -8,14 +8,14 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/libsv/go-bt v1.0.8
 	github.com/libsv/go-bt/v2 v2.1.1
-	github.com/shruggr/1sat-indexer v0.0.0-20230322071255-69e59ad88d7b
+	github.com/shruggr/1sat-indexer v0.0.0-20230324025827-828f9a16dc65
 )
 
 require (
 	github.com/GorillaPool/go-junglebus v0.0.0-20220928133317-2e3624f72bf9 // indirect
 	github.com/bitcoinsv/bsvd v0.0.0-20190609155523-4c29707f7173 // indirect
 	github.com/bitcoinsv/bsvutil v0.0.0-20181216182056-1d77cf353ea9 // indirect
-	github.com/bytedance/sonic v1.8.5 // indirect
+	github.com/bytedance/sonic v1.8.6 // indirect
 	github.com/centrifugal/centrifuge-go v0.9.4 // indirect
 	github.com/centrifugal/protocol v0.9.1 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
@@ -34,7 +34,7 @@ require (
 	github.com/lib/pq v1.10.7 // indirect
 	github.com/libsv/go-bk v0.1.6 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
-	github.com/mattn/go-isatty v0.0.17 // indirect
+	github.com/mattn/go-isatty v0.0.18 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.7 // indirect
