@@ -8,7 +8,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/libsv/go-bt v1.0.8
 	github.com/libsv/go-bt/v2 v2.1.1
-	github.com/shruggr/1sat-indexer v0.0.0-20230324185324-e7f3a6e136fd
+	github.com/shruggr/1sat-indexer v0.0.0-20230324193834-6efa0e7d38a9
 )
 
 require (

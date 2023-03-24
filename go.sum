@@ -125,6 +125,12 @@ github.com/shruggr/1sat-indexer v0.0.0-20230324184723-970e48042c34 h1:L3DpzhCzV+
 github.com/shruggr/1sat-indexer v0.0.0-20230324184723-970e48042c34/go.mod h1:x4m8e17X4qROm+xsNLTflqFcrCPiC/uPndpA9BrSS7Y=
 github.com/shruggr/1sat-indexer v0.0.0-20230324185324-e7f3a6e136fd h1:6QMZkNLqKGHS5Ryb47cc/DGWqzc5J2qWZdBunuJJj6I=
 github.com/shruggr/1sat-indexer v0.0.0-20230324185324-e7f3a6e136fd/go.mod h1:x4m8e17X4qROm+xsNLTflqFcrCPiC/uPndpA9BrSS7Y=
+github.com/shruggr/1sat-indexer v0.0.0-20230324192955-6d839e2bc2ac h1:WOfSLaVOwdegrlDHwqfq7XqzVLdrS4Zkp7WsSChnxcc=
+github.com/shruggr/1sat-indexer v0.0.0-20230324192955-6d839e2bc2ac/go.mod h1:x4m8e17X4qROm+xsNLTflqFcrCPiC/uPndpA9BrSS7Y=
+github.com/shruggr/1sat-indexer v0.0.0-20230324193322-bbb29b7267c5 h1:pu8IEZfphVI8bnHsgYGfzm0xCKi1F43GrAKmvZuYmTk=
+github.com/shruggr/1sat-indexer v0.0.0-20230324193322-bbb29b7267c5/go.mod h1:x4m8e17X4qROm+xsNLTflqFcrCPiC/uPndpA9BrSS7Y=
+github.com/shruggr/1sat-indexer v0.0.0-20230324193834-6efa0e7d38a9 h1:4sCExJpM3roNKl9P5/HexaVmWZIpmzCF68iTHZKc2vw=
+github.com/shruggr/1sat-indexer v0.0.0-20230324193834-6efa0e7d38a9/go.mod h1:x4m8e17X4qROm+xsNLTflqFcrCPiC/uPndpA9BrSS7Y=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/objx v0.4.0/go.mod h1:YvHI0jy2hoMjB+UWwv71VJQ9isScKT/TqJzVSSt89Yw=
 github.com/stretchr/objx v0.5.0/go.mod h1:Yh+to48EsGEfYuaHDzXPcE3xhTkx73EhmCGUpEOglKo=

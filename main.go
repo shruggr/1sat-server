@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/gin-contrib/cors"
@@ -130,6 +131,22 @@ func main() {
 		}
 		// c.Header("cache-control", "no-cache,no-store,must-revalidate")
 		c.JSON(http.StatusOK, gin.H{"count": count})
+	})
+
+	r.GET("/api/inscriptions/:id", func(c *gin.Context) {
+		id, err := strconv.ParseUint(c.Param("id"), 10, 64)
+		if err != nil {
+			handleError(c, err)
+			return
+		}
+		im, err := lib.LoadInscriptionById(id)
+		if err != nil {
+			handleError(c, err)
+			return
+		}
+
+		c.Header("cache-control", "max-age=604800,immutable")
+		c.JSON(http.StatusOK, im)
 	})
 
 	r.GET("/api/files/inscriptions/:origin", func(c *gin.Context) {
