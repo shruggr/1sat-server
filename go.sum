@@ -131,6 +131,8 @@ github.com/shruggr/1sat-indexer v0.0.0-20230324193322-bbb29b7267c5 h1:pu8IEZfphV
 github.com/shruggr/1sat-indexer v0.0.0-20230324193322-bbb29b7267c5/go.mod h1:x4m8e17X4qROm+xsNLTflqFcrCPiC/uPndpA9BrSS7Y=
 github.com/shruggr/1sat-indexer v0.0.0-20230324193834-6efa0e7d38a9 h1:4sCExJpM3roNKl9P5/HexaVmWZIpmzCF68iTHZKc2vw=
 github.com/shruggr/1sat-indexer v0.0.0-20230324193834-6efa0e7d38a9/go.mod h1:x4m8e17X4qROm+xsNLTflqFcrCPiC/uPndpA9BrSS7Y=
+github.com/shruggr/1sat-indexer v0.0.0-20230324214555-6c802157692f h1:2ux4N3rWGlh14xyZEyiIvFQMLYJyz6cLxpF2tC9UvWU=
+github.com/shruggr/1sat-indexer v0.0.0-20230324214555-6c802157692f/go.mod h1:BW2Lb9NnlUvL15AReLm1Jd2XGO6RdvL6bZ0qR2PFmmY=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/objx v0.4.0/go.mod h1:YvHI0jy2hoMjB+UWwv71VJQ9isScKT/TqJzVSSt89Yw=
 github.com/stretchr/objx v0.5.0/go.mod h1:Yh+to48EsGEfYuaHDzXPcE3xhTkx73EhmCGUpEOglKo=
