@@ -122,7 +122,7 @@ func main() {
 		c.JSON(http.StatusOK, im)
 	})
 
-	r.GET("/api/files/inscriptions/count", func(c *gin.Context) {
+	r.GET("/api/inscriptions/count", func(c *gin.Context) {
 		row := lib.Db.QueryRow(`SELECT MAX(id) FROM inscriptions`)
 		var count int
 		err := row.Scan(&count)
