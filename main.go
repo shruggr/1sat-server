@@ -90,6 +90,7 @@ func main() {
 		c.JSON(http.StatusOK, utxos)
 	})
 
+	// get inscriptions by origin or txid
 	r.GET("/api/inscriptions/:origin", func(c *gin.Context) {
 
 		// detect either outpoint or txid
