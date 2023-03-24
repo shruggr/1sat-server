@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/gin-contrib/cors"
@@ -90,16 +91,30 @@ func main() {
 	})
 
 	r.GET("/api/inscriptions/:origin", func(c *gin.Context) {
-		origin, err := lib.NewOriginFromString(c.Param("origin"))
-		if err != nil {
-			handleError(c, err)
-			return
+
+		// detect either outpoint or txid
+		originOrTxid := c.Param("origin")
+		var im []*lib.InscriptionMeta
+		var err error
+		if strings.Contains(originOrTxid, "_") {
+			origin, err := lib.NewOriginFromString(originOrTxid)
+			if err != nil {
+				handleError(c, err)
+				return
+			}
+			im, err = lib.LoadInscriptions(origin)
+			if err != nil {
+				handleError(c, err)
+				return
+			}
+		} else {
+			im, err = lib.LoadInscriptionsByTxID([]byte(originOrTxid))
+			if err != nil {
+				handleError(c, err)
+				return
+			}
 		}
-		im, err := lib.LoadInscriptions(origin)
-		if err != nil {
-			handleError(c, err)
-			return
-		}
+
 		c.Header("cache-control", "max-age=604800,immutable")
 		c.JSON(http.StatusOK, im)
 	})
