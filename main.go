@@ -122,6 +122,18 @@ func main() {
 		c.JSON(http.StatusOK, im)
 	})
 
+	r.GET("/api/files/inscriptions/count", func(c *gin.Context) {
+		row := lib.Db.QueryRow(`SELECT MAX(id) FROM inscriptions`)
+		var count int
+		err := row.Scan(&count)
+		if err != nil {
+			handleError(c, err)
+			return
+		}
+		// c.Header("cache-control", "no-cache,no-store,must-revalidate")
+		c.JSON(http.StatusOK, gin.H{"count": count})
+	})
+
 	r.GET("/api/files/inscriptions/:origin", func(c *gin.Context) {
 		origin, err := lib.NewOriginFromString(c.Param("origin"))
 		if err != nil {
