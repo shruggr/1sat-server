@@ -1,0 +1,56 @@
+<html>
+<body>
+    <div>
+        <button onclick="page(-1)">Prev</button>
+        <span id="id">0</span>
+        <button onclick="page(1)">Next</button>
+    </div>
+    <div><a id="link" href="">link</a></div>
+    <div id="type"></div>
+    <div id="content"></div>
+    </div>
+    <script>
+        try {
+            navigator.registerProtocolHandler("web+onesatorg", "/api/handle/%s", "1Sat")
+        } catch (e) {
+            console.log(e)
+        }
+        const API = "https://ordinals.gorillapool.io/api";
+        let id = 0
+        if (window.location.hash) {
+            id = parseInt(window.location.hash.substring(1))
+        }
+        load()
+        window.addEventListener("locationchange", function () {
+            id = parseInt(window.location.hash.substring(1))
+            load()
+        });
+
+        async function load() { 
+            const resp = await fetch(`${API}/inscriptions/${id}`)
+            const inscription = await resp.json()
+            console.log(inscription)
+            document.getElementById("link").href = `web+onesatorg://${inscription.origin || ''}`
+            document.getElementById("type").innerText = inscription.file.type
+            const [type, subtype] = inscription.file.type.split("/")
+            document.getElementById("id").innerText = inscription.id
+            switch(type) {
+                case "image":
+                    document.getElementById("content").innerHTML = `<img src="${API}/files/inscriptions/${inscription.origin}" style="max-width:1000px; max-height:1000px;">`
+                    break;
+                case "text":
+                    const resp = await fetch(`${API}/files/inscriptions/${inscription.origin}`)
+                    const data = await resp.text()
+                    document.getElementById("content").innerHTML = `<pre>${data}</pre>`
+    
+            }
+        }
+    
+        async function page(offset) {
+            id += offset
+            window.location.hash = id
+            await load()
+        }
+    </script>
+</body>
+</html>

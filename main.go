@@ -4,10 +4,12 @@ import (
 	"crypto/sha256"
 	"database/sql"
 	"encoding/hex"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/gin-contrib/cors"
@@ -22,6 +24,7 @@ import (
 )
 
 var db *sql.DB
+var index []byte
 
 func init() {
 	godotenv.Load()
@@ -36,6 +39,8 @@ func init() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	index, err = os.ReadFile("./static/index.html")
 }
 
 func main() {
@@ -164,6 +169,21 @@ func main() {
 		c.Data(http.StatusOK, ins.Type, ins.Body)
 	})
 
+	r.GET("/api/handle/*pattern", func(c *gin.Context) {
+		// c.String(http.StatusOK, "OK")
+		fmt.Println(c.Param("pattern"))
+		if strings.HasPrefix(c.Param("pattern"), "/web+onesatorg") {
+			parts := strings.Split(c.Param("pattern"), "/")
+			c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/api/files/inscriptions/%s", parts[len(parts)-1]))
+			return
+		}
+		c.String(http.StatusNotFound, "Not found")
+
+	})
+	r.NoRoute(func(c *gin.Context) {
+		c.Header("content-type", "text/html")
+		c.String(200, "%s", index)
+	})
 	listen := os.Getenv("LISTEN")
 	if listen == "" {
 		listen = "0.0.0.0:8080"
