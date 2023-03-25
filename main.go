@@ -188,6 +188,7 @@ func main() {
 			return
 		}
 		for _, txt := range txtRecs {
+			fmt.Println("TXT", txt)
 			if !strings.HasPrefix(txt, "1sat-origin=") {
 				origin, err := lib.NewOriginFromString(strings.TrimPrefix(txt, "1sat-origin="))
 				if err != nil {
