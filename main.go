@@ -182,15 +182,20 @@ func main() {
 
 	})
 	r.NoRoute(func(c *gin.Context) {
-		txtRecs, err := net.LookupTXT(c.Request.Host)
+		// host := c.Request.Host
+		host := "ordinals.shruggr.cloud"
+		txtRecs, err := net.LookupTXT(host)
 		if err != nil {
 			handleError(c, err)
 			return
 		}
 		for _, txt := range txtRecs {
 			fmt.Println("TXT", txt)
-			if !strings.HasPrefix(txt, "1sat-origin=") {
-				origin, err := lib.NewOriginFromString(strings.TrimPrefix(txt, "1sat-origin="))
+			prefix := "1sat-origin="
+			if txt[:len(prefix)] == prefix {
+				str := strings.TrimPrefix(txt, prefix)
+				fmt.Println("ORIGIN:", str)
+				origin, err := lib.NewOriginFromString(str)
 				if err != nil {
 					handleError(c, err)
 					return
