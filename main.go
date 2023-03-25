@@ -6,6 +6,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"strconv"
@@ -181,8 +182,29 @@ func main() {
 
 	})
 	r.NoRoute(func(c *gin.Context) {
-		c.Header("content-type", "text/html")
-		c.String(200, "%s", index)
+		txtRecs, err := net.LookupTXT(c.Request.Host)
+		if err != nil {
+			handleError(c, err)
+			return
+		}
+		for _, txt := range txtRecs {
+			if !strings.HasPrefix(txt, "1sat-origin=") {
+				origin, err := lib.NewOriginFromString(strings.TrimPrefix(txt, "1sat-origin="))
+				if err != nil {
+					handleError(c, err)
+					return
+				}
+				ins, err := lib.LoadInscriptionFile(origin)
+				if err != nil {
+					handleError(c, err)
+					return
+				}
+				c.Header("cache-control", "max-age=604800,immutable")
+				c.Data(http.StatusOK, ins.Type, ins.Body)
+				return
+			}
+		}
+		c.String(200, "OK")
 	})
 	listen := os.Getenv("LISTEN")
 	if listen == "" {
