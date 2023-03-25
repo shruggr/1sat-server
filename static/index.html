@@ -36,7 +36,9 @@
             document.getElementById("id").innerText = inscription.id
             switch(type) {
                 case "image":
-                    document.getElementById("content").innerHTML = `<img src="${API}/files/inscriptions/${inscription.origin}" style="max-width:1000px; max-height:1000px;">`
+                    document.getElementById("content").innerHTML = 
+                        `<img src="web+onesatorg://${inscription.origin}" style="max-width:1000px; max-height:1000px;">`
+                        // `<img src="${API}/files/inscriptions/${inscription.origin}" style="max-width:1000px; max-height:1000px;">`
                     break;
                 case "text":
                     const resp = await fetch(`${API}/files/inscriptions/${inscription.origin}`)
